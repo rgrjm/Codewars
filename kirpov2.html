@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kirpov 2</title>
+    <link rel="stylesheet" href="visually better.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Order of the Flower</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="main.html" class="nav-link">Main</a></li>
+                <li class="nav-item"><a href="kirpov1.html" class="nav-link">Kirpov 1</a></li>
+                <li class="nav-item"><a href="kirpov2.html" class="nav-link">Kirpov 2</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding:2rem; font-family: 'Courier New', monospace; color:#00ff00; background:#07102a; min-height:80vh;">
+        <h1>Kirpov 2 — Section Details</h1>
+        <p>Second section of the Kirpov class, built in 2022 by the Order of the Flower.
+           Designed to serve as an interplanetary transport and cargo vessel.</p>
+        
+        <p>Send signal to vessel:</p>
+
+        <label class="switch" title="Send signal to vessel">
+                    <input
+                        type="checkbox"
+                        id="vesselsignal2"
+                        onchange="this.setAttribute('aria-checked', this.checked); document.getElementById('vesselsignal2State').textContent = this.checked ? 'Enabled' : 'Disabled';"
+                        aria-checked="false"
+                    />
+                        <span class="power-value" id="vesselsignal2State">Disabled</span>
+
+                    <span class="slider"></span>
+                </label>
+
+    </main>
+</body>
+</html>

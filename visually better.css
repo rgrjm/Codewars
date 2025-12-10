@@ -1,0 +1,318 @@
+/* Navigation Bar Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00bfff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: hex(#1dab17);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-logo {
+        width: 100%;
+    }
+}
+
+/* Control Panel Styling */
+.control-panel {
+    background: linear-gradient(135deg, #525252 0%, #000000 100%);
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid #000000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.panel-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+}
+
+.panels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.panel {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00bfff;
+    padding: 1.5rem;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.2), inset 0 0 15px rgba(0, 191, 255, 0.05);
+    font-family: 'Courier New', monospace;
+}
+
+.panel-title {
+    color: #00813a;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px #ff0000;
+    border-bottom: 1px solid #9b7575;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.nav-panel {
+    grid-column: span 1;
+}
+
+.map-display {
+    width: 350px;
+    height: 200px;
+    background: #000;
+    border: 1px solid #00ff00;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.coord-display {
+    color: #00ff00;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(0, 255, 0, 0.05);
+    border: 1px solid #00ff00;
+    border-radius: 3px;
+}
+
+/* Systems Panel */
+.system-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.system-label {
+    color: #00ff00;
+    min-width: 120px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.status-bar {
+    flex: 1;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00bfff;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.status-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #00bfff);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.status-value {
+    color: #00ff00;
+    min-width: 40px;
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Communications Panel */
+.comm-display {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00ff00;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    min-height: 100px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.message {
+    color: #00ff00;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-left: 2px solid #00ff00;
+    padding-left: 0.7rem;
+}
+
+.comm-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+/* Power Management Panel */
+.power-section {
+    margin-bottom: 1.5rem;
+}
+
+.power-label {
+    color: #00bfff;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.power-slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 0.3rem;
+}
+
+.power-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #00ff00;
+    cursor: pointer;
+    box-shadow: 0 0 8px #00ff00;
+}
+
+.power-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #00ff00;
+    cursor: pointer;
+    box-shadow: 0 0 8px #00ff00;
+    border: none;
+}
+
+.power-value {
+    color: #00ff00;
+    font-size: 0.85rem;
+    float: right;
+    font-weight: bold;
+}
+
+.power-warning {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    padding: 0.7rem;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff0000;
+    margin-top: 1rem;
+}
+
+/* Control Buttons */
+.control-btn {
+    background: linear-gradient(135deg, #00bfff, #00ff00);
+    border: 1px solid #00ff00;
+    color: #000;
+    padding: 0.7rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.control-btn:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    transform: scale(1.05);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .panels-grid {
+        grid-template-columns: 1fr;
+    }
+}
