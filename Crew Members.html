@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Crew Members</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Space Pirates</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Main</a></li>
+                <li class="nav-item"><a href="kirpov1.html" class="nav-link">Kirpov 1</a></li>
+                <li class="nav-item"><a href="kirpov2.html" class="nav-link">Kirpov 2</a></li>
+                <li class="nav-item"><a href="Crew Members.html" class="nav-link">Crew Members</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding:2rem; font-family: 'Courier New', monospace; color:#b80300; background:#000000; min-height:80vh;">
+        <h1>The Crew</h1>
+        <p></p>
+        <p>Send signal to vessel:</p>
+
+        <div class="crew-list" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1rem;">
+            <a class="crew-card" href="crew_alex.html" style="background:#07102a; border:1px solid #b80300; padding:1rem; text-decoration:none; color:#b80300; border-radius:6px; display:flex; flex-direction:column; align-items:center; gap:.5rem;">
+                <img src="Images/Alex.png" alt="Alex Ryder" style="width:150px; height:150px; object-fit:cover; border-radius:6px; border:1px solid #b80300;">
+                <strong>Alex Ryder</strong>
+                <span style="color:#00bfff;">Pilot</span>
+            </a>
+
+            <a class="crew-card" href="crew_arya.html" style="background:#07102a; border:1px solid #b80300; padding:1rem; text-decoration:none; color:#b80300; border-radius:6px; display:flex; flex-direction:column; align-items:center; gap:.5rem;">
+                <img src="Images/arya.png" alt="AgetExtension':'Arya Voss" style="width:150px; height:150px; object-fit:cover; border-radius:6px; border:1px solid #b80300;">
+                <strong>Arya Voss</strong>
+                <span style="color:#00bfff;">Systems Engineer</span>
+            </a>
+        </div>
+
+        <p style="margin-top:1.25rem;">Click a crew card to view that member's page. Replace the sample images in `Images/` with real photos if available.</p>
+        
+
+    </main>
+</body>
+</html>

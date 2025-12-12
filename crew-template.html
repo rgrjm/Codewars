@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CREW MEMBER - Template</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">Space Pirates</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="main.html" class="nav-link">Main</a></li>
+        <li class="nav-item"><a href="Crew Members.html" class="nav-link">Crew</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="crew-main" style="padding:2rem; font-family: 'Courier New', monospace; color:#b80300; background:#000000; min-height:80vh;">
+    <a href="Crew Members.html" style="color:#00bfff;">← Back to Crew</a>
+
+    <section class="crew-profile" style="display:flex; gap:2rem; align-items:flex-start; margin-top:1rem;">
+      <!-- Photo (replace src with actual image path) -->
+      <img src="Images/placeholder-crew.png" alt="Photo of CREW_NAME" style="width:220px; height:220px; object-fit:cover; border:2px solid #b80300; border-radius:6px;">
+
+      <div class="crew-details">
+        <h1 style="margin:0 0 .5rem 0;">CREW_NAME</h1>
+        <h3 style="margin:0 0 1rem 0; color:#00bfff;">ROLE_TITLE</h3>
+
+        <div class="crew-bio" style="max-width:800px; color:#b80300;">
+          <p>Short bio or description of the crew member. Replace this text with the member's background, specialties, and notable assignments.</p>
+        </div>
+
+        <div class="crew-stats" style="margin-top:1rem; display:flex; gap:1.5rem;">
+          <div class="stat">
+            <strong>Rank:</strong> Captain
+          </div>
+          <div class="stat">
+            <strong>Experience:</strong> 8 years
+          </div>
+          <div class="stat">
+            <strong>Specialty:</strong> Navigation
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <button class="control-btn">Send Message</button>
+          <button class="control-btn" style="margin-left:.5rem;">View Log</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="crew-notes" style="margin-top:2rem; color:#b80300;">
+      <h2 style="color:#00bfff;">Notes</h2>
+      <p>Optional notes / mission logs go here.</p>
+    </section>
+  </main>
+</body>
+</html>

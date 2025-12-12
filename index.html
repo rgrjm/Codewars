@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWars Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="Images/Space Pirates.png" alt="Space Pirates" class="header-image">
+            <div class="nav-logo">Space Pirates</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Main</a></li>
+                <li class="nav-item"><a href="kirpov1.html" class="nav-link">Kirpov 1</a></li>
+                <li class="nav-item"><a href="kirpov2.html" class="nav-link">Kirpov 2</a></li>
+                <li class="nav-item"><a href="Crew Members.html" class="nav-link">Crew Members</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="control-panel">
+<div class="panel-header">Main </div>
+    
+    <div class="panels-grid">
+        
+        <div class="panel nav-panel">
+            <div class="panel-title">NAVIGATION MAP</div>
+            <img src="Images/map.png" alt="">
+            <img src="Images/map-shield.png" alt="">
+            <div class="coord-display">Coordinates: X: 24509 | Y: 18209 | Z: 50287</div>
+        </div>
+
+        
+        <div class="panel systems-panel">
+            <div class="panel-title">SYSTEMS STATUS</div>
+            <div class="system-item">
+                <span class="system-label">ENGINES</span>
+                <div class="status-bar">
+                    <div class="status-fill" style="width: 0%;"></div>
+                </div>
+                <span class="status-value"></span>
+            </div>
+            <div class="system-item">
+                <span class="system-label">SHIELDS</span>
+                <div class="status-bar">
+                    <div class="status-fill" style="width: 100%;"></div>
+                </div>
+                <span class="status-value"></span>
+            </div>
+            <div class="system-item">
+                <span class="system-label">HULL INTEGRITY</span>
+                <div class="status-bar">
+                    <div class="status-fill" style="width: 100%;"></div>
+                </div>
+                <span class="status-value">full</span>
+            </div>
+            <div class="system-item">
+                <span class="system-label">OXYGEN</span>
+                <div class="status-bar">
+                    <div class="status-fill" style="width: 100%;"></div>
+                </div>
+                <span class="status-value">available</span>
+            </div>
+        </div>
+
+        
+        <div class="panel comm-panel">
+            <div class="panel-title">COMMUNICATIONS</div>
+            <div class="comm-display">
+                <div class="message">MAIN STATION: All systems nominal</div>
+                <div class="message">FLEET: Standing by for orders</div>
+                <div class="message">SCANNER: No threats detected</div>
+            </div>
+            <div class="comm-controls">
+                <button class="control-btn">SEND RADIO SIGNAL</button>
+                <button class="control-btn">HAIL FLEET</button>
+                <button class="control-btn">DISTRESS SIGNAL</button>
+            </div>
+        </div>
+
+        
+        <div class="panel power-panel">
+            <div class="panel-title">POWER MANAGEMENT</div>
+            <div class="power-section">
+            <div class="power-label">ENGINE THROTTLE</div>
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="75"
+                class="power-slider"
+                id="reactorSlider"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                oninput="this.setAttribute('aria-valuenow', this.value); document.getElementById('reactorValue').textContent = this.value + '%'; document.querySelector('.systems-panel .system-item .status-fill')?.style.setProperty('width', this.value + '%');"
+            />
+            <span class="power-value" id="reactorValue">0%</span>
+            </div>
+            <div class="power-section">
+            <div class="power-label">SHIELD DRAIN</div>
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="40"
+                class="power-slider"
+                id="shieldSlider"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                oninput="this.setAttribute('aria-valuenow', this.value); document.getElementById('shieldValue').textContent = this.value + '%'; (function(v){ const shieldItem = document.querySelectorAll('.systems-panel .system-item')[1]; if(shieldItem) shieldItem.querySelector('.status-fill')?.style.setProperty('width', Math.max(0, 100 - v) + '%'); })(this.value);"
+            />
+            <span class="power-value" id="shieldValue">0%</span>
+            </div>
+            <div class="power-section">
+                <div class="power-label">WEAPON SYSTEMS</div>
+                <label class="switch" title="Toggle weapon systems">
+                    <input
+                        type="checkbox"
+                        id="weaponsToggle"
+                        onchange="this.setAttribute('aria-checked', this.checked); document.getElementById('weaponsState').textContent = this.checked ? 'Enabled' : 'Disabled';"
+                        aria-checked="false"
+                    />
+                    <span class="slider"></span>
+                </label>
+
+                <span class="power-value" id="weaponsState">Disabled</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
